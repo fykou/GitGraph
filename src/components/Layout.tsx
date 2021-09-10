@@ -1,14 +1,20 @@
 import React from 'react'
-import Navbar from './Navbar'
+import { Navbar } from './Navbar'
+import { Footer } from './Footer'
+import { Header } from './Header'
 
-export default function Layout({ children }: { children: any }) {
+import '../styles/global.css'
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Layout({ children }: { children: any }) {
   return (
-    <div className="layout">
+    <div className="flex flex-col min-h-screen max-w-screen-xl my-0 mx-auto ">
       <Navbar />
+      <Header />
 
-      <div className="content">{children}</div>
+      <div className="flex-grow">{children}</div>
 
-      <footer></footer>
+      <Footer />
     </div>
   )
 }

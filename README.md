@@ -37,7 +37,7 @@ We use the following naming conventions:
 - DRAFT - For work in progress code
 - DELETE - Removal off code (no additions)
 
-Commit messages need to follow one of these four tags before additional message i. e:
+Commit messages need to follow one of these four tags before additional message.
 Commit messages also need to be written in present time.
 
 `FEAT: add new component`
@@ -49,9 +49,21 @@ After the MR has been verfiied and accepted, the creator of the MR needs to merg
 
 Remember to squash commits when merging, since commit messages after dosen't make much sense in the master branch.
 
+### Dependencies:
+
+- TypeScript
+- React
+- Tailwind CSS
+- Jest
+- Eslint
+- Prettier
+- Craco
+- Font awesome
+
 ### VSCode extensions
 
 - Prettier
 - ESLint
 - Bracket Pair Colorizer
+- Tailwind CSS Intelisense
 - Vim (for legends)

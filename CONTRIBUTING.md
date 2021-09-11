@@ -40,7 +40,7 @@ git clone git@gitlab.sportradar.ag:graph/graphql.git
 cd graphql
 ```
 
-7. Install dependencies (Must be on Sportradar VPN because of SDS @internal/proto)
+7. Install dependencies
 
 ```sh
 yarn
@@ -123,11 +123,11 @@ You can start jest with watch mode with:
 
 - `yarn jest:watch`
 
-You can run one single test file by running `yarn jest:watch <FILENAME>`, for example `yarn jest:watch src/models/Baseball/BaseballPitchLevelEventBatterHitDirection/direction-angle.test.ts`.
+You can run one single test file by running `yarn jest:watch <FILENAME>`, for example `yarn jest:watch src/..<FILENAME>.test.ts`.
 
 ## Editor
 
-We recommend using Visual Studio Code as editor, but whatever you prefer will probably work. You might need to configure your editor to work with TypeScript, eslint, prettier, and editorconfig.
+We recommend using Visual Studio Code as editor, but whatever you prefer will probably work. You might need to configure your editor to work with TypeScript, ESlint, Prettier, and Editorconfig.
 
 ### Visual Studio Code
 

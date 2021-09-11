@@ -36,8 +36,8 @@ yarn -v
 6. Clone project
 
 ```sh
-git clone git@gitlab.sportradar.ag:graph/graphql.git
-cd graphql
+git clone git@gitlab.stud.idi.ntnu.no:it2810-h21/team-51/project-2.git
+cd project-2
 ```
 
 7. Install dependencies

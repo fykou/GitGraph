@@ -1,6 +1,6 @@
 ## Configure env setup:
 
-We use yarn as our package manager, in order to get the app to run av be up to date with the latest dependencies run:
+We use yarn as our package manager, in order to get the app to run and be up to date with the latest dependencies run:
 
 `yarn install`
 

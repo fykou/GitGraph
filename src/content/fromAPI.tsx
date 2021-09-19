@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import IIssue from '../types/IIssue'
+import { IIssue } from './types'
 import axios from '../http-common'
 
 export default function Content() {
   const defaultIssue: IIssue[] = []
 
   const [data, setData] = useState(defaultIssue)
-  const [error, setError]: [string, (error: string) => void] =
-    React.useState('')
+  const [error, setError]: [string, (error: string) => void] = useState('')
 
   useEffect(() => {
     getIssues()

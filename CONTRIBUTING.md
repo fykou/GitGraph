@@ -4,13 +4,16 @@
 
 This project is written in TypeScript with the React frontend framework alongside Tailwind CSS and is using Prettier and ESlint for code formatting. You need node v14 and yarn.
 
-1. Install node v14. I recommend installing that with nvm: https://github.com/nvm-sh/nvm
+1. Install node v14. I recommend installing that with nvm
+
+MacOS/Ubuntu: https://github.com/nvm-sh/nvm
+Windows: https://nodejs.org/en/download/
 
 ```sh
 nvm install 14
 ```
 
-2. Make node v14 default
+1. Make node v14 default
 
 ```sh
 nvm alias default 14
@@ -26,6 +29,7 @@ node -v
 
 - Debian/Ubuntu: https://classic.yarnpkg.com/en/docs/install/#debian-stable
 - macOS: https://classic.yarnpkg.com/en/docs/install/#mac-stable
+- Windows: https://classic.yarnpkg.com/en/docs/install/
 
 5. Open a new terminal and verify yarn version (should return 1.X.X)
 
@@ -52,7 +56,7 @@ yarn
 yarn start
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000 on your favourite browser.
 
 Cheers, hopefully!
 
@@ -133,8 +137,10 @@ We recommend using Visual Studio Code as editor, but whatever you prefer will pr
 
 #### Extensions
 
-- Editorconfig for VS Code
+Editorconfig for VSCode:
+
 - ESLint
+- TailwindCSS
 - Prettier - Code formatter
 - Bracket Pair Colorizer
 - Vim (for legends)

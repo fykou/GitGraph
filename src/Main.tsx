@@ -2,7 +2,7 @@
 import React from 'react'
 import './styles/global.css'
 
-import { Content } from './content/fromAPI'
+import Content from './content/fromAPI'
 
 export default function Main() {
   return (

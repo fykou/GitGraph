@@ -1,12 +1,40 @@
-import React from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import IIssue from '../types/IIssue'
+import axios from '../http-common'
 
-export function Content() {
+export default function Content() {
+  const defaultIssue: IIssue[] = []
+
+  const [data, setData] = useState(defaultIssue)
+  const [error, setError]: [string, (error: string) => void] =
+    React.useState('')
+
+  useEffect(() => {
+    getIssues()
+  })
+
+  const getIssues = () => {
+    axios
+      .get<IIssue[]>(`issues`)
+      .then((response) => {
+        setData(response.data)
+      })
+      .catch((error: Error) => {
+        setError(error.message)
+      })
+  }
+
   return (
     <div className="w-3/6 m-auto text-center">
-      <p>
-       
-      </p>
+      <ul className="posts">
+        {data.map((issue) => (
+          <li key={issue.id}>
+            <h3>{issue.title}</h3>
+            <p className="mt-1 mb-8">{issue.description}</p>
+          </li>
+        ))}
+      </ul>
+      {error && <p className="error">{error}</p>}
     </div>
   )
 }

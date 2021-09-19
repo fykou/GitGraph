@@ -59,6 +59,7 @@ Remember to squash commits when merging, since commit messages after dosen't mak
 - Prettier
 - Craco
 - Font awesome
+- Axios
 
 ### VSCode extensions
 

@@ -24,6 +24,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "test:ci": "craco test --ci --reporters=default --reporters=jest-junit --coverageReporters=html --coverageReporters=text --coverageReporters=text-summary --coverageReporters=cobertura --coverage --coverageDirectory=\"./coverage\" --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
+    "jest-junit": "^12.3.0",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tsconfig-paths": "^3.11.0",

@@ -1,0 +1,43 @@
+image: node:14.17.6
+
+stages:
+  - build
+  - test
+  - lint
+
+build:
+  stage: build
+  script:
+    - yarn install
+    - yarn build
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    expire_in: 1 days
+    when: on_success
+    paths:
+      - node_modules/
+
+test:
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  dependencies:
+    - build
+  script:
+    - yarn test:ci
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - junit.xml
+      cobertura: coverage/cobertura-coverage.xml
+
+eslint:
+  stage: lint
+  before_script:
+    - yarn add --dev eslint \ 
+      eslint-config-prettier \ 
+      eslint-plugin-prettier
+  script: 
+    - yarn eslint src/ 

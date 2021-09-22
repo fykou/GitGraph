@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="grid grid-cols-3 gap-4 pb-8 pt-16">
+    <footer className="grid grid-cols-3 gap-4 pb-8 pt-16" data-testid="footer-1">
       <div className="text-center">
         <h2 className="pb-2 text-2xl">About us</h2>
         <p>

@@ -2,12 +2,12 @@
 import React from 'react'
 import './styles/global.css'
 
-import Content from './content/fromAPI'
+import FetchData from './content/APIManager'
 
 export default function Main() {
   return (
     <div className="Main">
-      <Content />
+      <FetchData />
     </div>
   )
 }

@@ -8,11 +8,12 @@
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 <br>
 
 # Introduction
-gitGraphs is a single page application that fetches and shows information about our repo. \
+GitGraph is a single page application that fetches and shows information about our repo. \
 This project was made as a project for teaching purposes in the class IT2810 - WebDesign at NTNU in 2021.
 
 # Installation and Setup Instructions
@@ -32,3 +33,5 @@ You can find the documenation for react [on their website](https://reactjs.org/d
 The data used on our website is pulled from [the GitLab API](https://docs.gitlab.com/ee/api/api_resources.html) using [Axios](https://axios-http.com/docs/intro).
 
 More project spesific documentation can be found [here](documentation).
+
+To contribute, a guide can be found [here](CONTRIBUTING.md)

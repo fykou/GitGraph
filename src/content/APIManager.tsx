@@ -102,8 +102,9 @@ export default function FetchData() {
   }
 
   return (
-    <div className="w-3/6 m-auto text-center">
+    <div className="m-auto text-center">
       <p>Issues completed: {presentageIssuesCompleted * 100}%</p>
+      <div className="grid grid-cols-3 gap-4 p-1">
       <ul className="posts">
         <h1 className="text-4xl">Top 5 Contributors</h1>
         {top5Contributors.map((contributor) => (
@@ -115,7 +116,9 @@ export default function FetchData() {
             </p>
           </li>
         ))}
+        </ul>
 
+        <ul className="posts">
         <h1 className="text-4xl">Last 5 Closed Issues</h1>
         {last5ClosedIssues.map((issue) => (
           <li key={issue.id}>
@@ -124,7 +127,9 @@ export default function FetchData() {
             <p className="mt-1 mb-8">Closed at: {issue.closed_at}</p>
           </li>
         ))}
+        </ul>
 
+        <ul className="posts">
         <h1 className="text-4xl">Commits Pr Person</h1>
         {Object.entries(commitsPrPerson).map(([key, value]) => {
           return (
@@ -148,6 +153,7 @@ export default function FetchData() {
         })}
       </ul>
       {error && <p className="error">{error}</p>}
+      </div>
     </div>
   )
 }

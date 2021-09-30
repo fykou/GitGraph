@@ -1,5 +1,5 @@
 <h1 align="center">
-    gitGraphs
+    GitGraph
     <br><br>
 </h1>
 

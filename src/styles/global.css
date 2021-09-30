@@ -21,10 +21,20 @@ body {
   );
   background-repeat: no-repeat;
   color: white;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 p {
   @apply my-6;
+}
+
+.text-center-main {
+  @apply w-3/6 m-auto text-center;
 }
 
 .infobox {

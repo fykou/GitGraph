@@ -14,11 +14,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: radial-gradient(at top left, rgb(46, 46, 46), #000 100%);
+  background: radial-gradient(
+    at top left,
+    rgb(40, 40, 40),
+    rgb(20, 20, 20) 100%
+  );
   background-repeat: no-repeat;
   color: white;
 }
 
 p {
   @apply my-6;
+}
+
+.infobox {
+  @apply text-gray-900 dark:text-white
+  /* grid grid-cols-3 gap-4 p-8 */
+  bg-bestGray-light
+  shadow-2xl text-center;
 }

@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`APILoader test Test closed issues 1`] = `
+Array [
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 3157,
+            "name": "Ole Alexander Høyby",
+          },
+        },
+      ],
+      "description": null,
+      "id": 53799,
+      "state": "closed",
+      "title": "FEAT: Create filter for main graph commits",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 3157,
+            "name": "Ole Alexander Høyby",
+          },
+        },
+      ],
+      "description": "Add api for additional content:
+- Repo name
+- Repo description
+- Commits: individual and global
+- view readme",
+      "id": 52274,
+      "state": "closed",
+      "title": "FEAT: extend API",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": "Create cards that hold data from API",
+      "id": 52266,
+      "state": "closed",
+      "title": "FEAT: create basic card component",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 3157,
+            "name": "Ole Alexander Høyby",
+          },
+        },
+      ],
+      "description": "Use the react-meta-tags package to add meta tags",
+      "id": 51552,
+      "state": "closed",
+      "title": "FEAT: Add meta tags",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 3157,
+            "name": "Ole Alexander Høyby",
+          },
+        },
+      ],
+      "description": "Task description explicitly states Node version 14.17.x",
+      "id": 51549,
+      "state": "closed",
+      "title": "CHANGE: Node to version 14.17.x",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": "Add contributing to get members up to speed and for keeping things in check",
+      "id": 51475,
+      "state": "closed",
+      "title": "FEAT: add contributing md and update readme",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": "Set up pipelines for gitlab yml with jest and squash and eslitn/prettier checks",
+      "id": 51340,
+      "state": "closed",
+      "title": "FEAT: Setup testing/jesting with pipeline",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": "Add simple landingpage for application. Needs a navbar to navigate to other pages (to be created later)",
+      "id": 51335,
+      "state": "closed",
+      "title": "FEAT: add homepage for frontend app",
+    },
+  },
+]
+`;

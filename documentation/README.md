@@ -1,4 +1,8 @@
-# Documentation
+Why Axios?
+
+- Automatic JSON stringification when sending requests -> cleaner code. A feature not supported by the native Fetch API.
+- Native protection against cross-site request forgery (CSFR) attacks.
+- better error handling.
 
 ## Folder structure:
     gitGraphs
@@ -47,6 +51,18 @@ The data we're fetching is:
 The API key used to access this data is defined in a .env in the root directory of the project. As the API key is sensitive data this is not pushed to the repository.
 The .env file should have the following format: `REACT_APP_GITLAB_API_KEY=[api-key]`
 
+## Structure
+
+Our website is using Axios to gathr data from GitLab's resource REST API. The response is in a form of a json object, with _TypeScript_ we can give these JSON values types and allow us to safely access values on these objects. In **APILoader.ts** all the main fetching functions lie. All stored within a single class object that allow us maintain state if we want, (not necessairly React state (useState etc)). The data is then loaded into _models_ that allow us to further manipulate data within the object encapsulation.
+
+The main React component for the website is **Content.tsx** that further divides into main parent class components such as **UserList** and **IssueList** these components use the **APILoader** to load their nessecarry data when that component is created, this is done with **ComponentDidMount** and only occurs once.
+
+### CI (Pipeline)
+
+Pipeline first builds project, which should fail if invalid ts is pushed.  
+The testing stage of the pipeline ensures all tests are passed and prints a coverage report in the console.
+Upon pushing to master the coverage-badge in the GitLab repo is updated.
+The eslint job checks that eslint doesn't throw any errors for the project.
 <br/>
 
 # CI (Pipeline)

@@ -28,7 +28,9 @@
     "build": "craco build",
     "test": "craco test",
     "test:ci": "craco test --ci --reporters=default --reporters=jest-junit --coverageReporters=html --coverageReporters=text --coverageReporters=text-summary --coverageReporters=cobertura --coverage --coverageDirectory=\"./coverage\" --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:build": "yarn build && yarn check --integrity && yarn prettier:check && yarn eslint && yarn test",
+    "prettier:check": "prettier --list-different \"src/**/*.{ts,json, tsx}\""
   },
   "eslintConfig": {
     "extends": [

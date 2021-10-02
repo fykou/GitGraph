@@ -31,7 +31,7 @@ export interface IGitLabMilestone {
   state: string;
 }
 
-export interface IContributor {
+export interface IGitLabContributor {
   name: string
   email: string
   commits: number

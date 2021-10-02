@@ -1,8 +1,12 @@
-import { IGitLabIssue, IGitLabUser } from './content/types'
-import { Issue } from './models/Issue'
+import {
+  IGitLabIssue,
+  IGitLabUser,
+  ICommit,
+  IGitLabContributor,
+} from './content/types'
 import axios from './http-common'
 import { AxiosError, AxiosResponse } from 'axios'
-import { User } from './models'
+import { User, Issue, Commit, Contributor } from './models'
 import { arrayOrUndefined } from './utils/arrayOrUndefined'
 
 export class APILoader {
@@ -14,15 +18,17 @@ export class APILoader {
     try {
       const response = await this.getFeed<IGitLabIssue>('issues')
 
-      return response.data.map((issue: IGitLabIssue) => {
-        return new Issue({
-          id: issue.id,
-          title: issue.title,
-          description: issue.description,
-          assignees: this.getIssueAssignee(issue),
-          state: issue.state,
+      return arrayOrUndefined(
+        response.data.map((issue: IGitLabIssue) => {
+          return new Issue({
+            id: issue.id,
+            title: issue.title,
+            description: issue.description,
+            assignees: this.getIssueAssignee(issue),
+            state: issue.state,
+          })
         })
-      })
+      )
     } catch (e) {
       const error = e as AxiosError
       if (!error.response) {
@@ -47,17 +53,44 @@ export class APILoader {
     )
   }
 
+  public async getCommits(): Promise<Array<Commit> | undefined | string> {
+    try {
+      const response = await this.getFeed<ICommit>('repository/commits')
+
+      return arrayOrUndefined(
+        response.data.map((commit: ICommit) => {
+          return new Commit({
+            id: commit.short_id,
+            title: commit.title,
+            committerName: commit.committer_name,
+            createdAt: commit.created_at,
+            message: commit.message,
+            webUrl: commit.web_url,
+          })
+        })
+      )
+    } catch (e) {
+      const error = e as AxiosError
+      if (!error.response) {
+        return undefined
+      }
+      return `Status: ${error.response.status}`
+    }
+  }
+
   public async getUsers(): Promise<Array<User> | undefined | string> {
     try {
       const response = await this.getFeed<IGitLabUser>('users')
 
-      return response.data.map((user: IGitLabUser) => {
-        return new User({
-          id: user.id,
-          name: user.name,
-          avatarUrl: user.avatar_url,
+      return arrayOrUndefined(
+        response.data.map((user: IGitLabUser) => {
+          return new User({
+            id: user.id,
+            name: user.name,
+            avatarUrl: user.avatar_url,
+          })
         })
-      })
+      )
     } catch (e) {
       const error = e as AxiosError
       if (!error.response) {
@@ -86,5 +119,31 @@ export class APILoader {
         return false
       })
     )
+  }
+
+  public async geContributors(): Promise<
+    Array<Contributor> | undefined | string
+  > {
+    try {
+      const response = await this.getFeed<IGitLabContributor>(
+        'repository/contributors'
+      )
+
+      return arrayOrUndefined(
+        response.data.map((contributor: IGitLabContributor) => {
+          return new Contributor({
+            commits: contributor.commits,
+            email: contributor.email,
+            name: contributor.name,
+          })
+        })
+      )
+    } catch (e) {
+      const error = e as AxiosError
+      if (!error.response) {
+        return undefined
+      }
+      return `Status: ${error.response.status}`
+    }
   }
 }

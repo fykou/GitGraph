@@ -38,9 +38,8 @@ p {
 }
 
 .infobox {
-  @apply text-gray-900 dark:text-white
+  @apply text-white
   /* grid grid-cols-3 gap-4 p-8 */
-  bg-bestGray-light
   shadow-2xl text-center;
 }
 
@@ -48,6 +47,6 @@ p {
 @media screen and (max-width: 640px){
   #infobox{
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
   }
 }

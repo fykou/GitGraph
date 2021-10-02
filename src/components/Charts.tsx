@@ -7,6 +7,7 @@ import {
   Legend,
   Line,
   ResponsiveContainer,
+  Tooltip
 } from 'recharts'
 import _ from 'lodash'
 import { APILoader } from '../APILoader'
@@ -123,7 +124,7 @@ export class Charts extends React.Component<
       <div className="charts-container">
         <ResponsiveContainer width="90%" height={400}>
           <LineChart
-            data={this.getLineChartData()}
+            data={this.getLineChartData().reverse()}
             margin={{
               top: 5,
               right: 30,
@@ -136,6 +137,7 @@ export class Charts extends React.Component<
             <XAxis dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
             <YAxis label={{ value: 'Number of commits', angle: -90, position: 'insideLeft', fill: 'white' }} />
             <Legend />
+            <Tooltip />
             {contributors.map((contributor: Contributor) => (
               <Line
                 type="monotone"

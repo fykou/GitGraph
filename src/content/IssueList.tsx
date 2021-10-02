@@ -8,7 +8,7 @@ interface IIssueListState {
   loader: APILoader
   errorMessage: string
 }
-export default class IssueList extends React.Component<{ loader: APILoader }, IIssueListState> {
+export class IssueList extends React.Component<{ loader: APILoader }, IIssueListState> {
 
   constructor(props: { loader: APILoader }) {
     super(props)

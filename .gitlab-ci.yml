@@ -26,8 +26,7 @@ test:
     - build
   script:
     - touch .env && echo "REACT_APP_GITLAB_API_KEY="$REACT_APP_GITLAB_API_KEY .env
-    - chmod +x ./scripts/jest.sh
-    - ./scripts/jest.sh
+    - yarn test:ci
   artifacts:
     when: always
     reports:

@@ -43,3 +43,11 @@ p {
   bg-bestGray-light
   shadow-2xl text-center;
 }
+
+
+@media screen and (max-width: 640px){
+  #infobox{
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}

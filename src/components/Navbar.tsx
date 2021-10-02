@@ -12,12 +12,6 @@ export function Navbar() {
         <a className="mx-12 p-3 block " href="/">
           Home
         </a>
-        <a className="mx-12 p-3 block " href="/">
-          Graphs
-        </a>
-        <a className="mx-12 p-3 block " href="/">
-          About Us
-        </a>
       </div>
     </nav>
   )

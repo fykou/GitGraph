@@ -12,7 +12,6 @@ export function Layout({ children }: { children: any }) {
       <Navbar />
       <div className="flex flex-col min-h-screen max-w-screen-xl my-0 mx-auto ">
         <Header />
-
         <div className="flex-grow">{children}</div>
       </div>
       <Footer />

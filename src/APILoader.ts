@@ -1,7 +1,7 @@
 import {
   IGitLabIssue,
   IGitLabUser,
-  ICommit,
+  IGitLabCommit,
   IGitLabContributor,
 } from './content/types'
 import axios from './http-common'
@@ -55,10 +55,10 @@ export class APILoader {
 
   public async getCommits(): Promise<Array<Commit> | undefined | string> {
     try {
-      const response = await this.getFeed<ICommit>('repository/commits')
+      const response = await this.getFeed<IGitLabCommit>('repository/commits')
 
       return arrayOrUndefined(
-        response.data.map((commit: ICommit) => {
+        response.data.map((commit: IGitLabCommit) => {
           return new Commit({
             id: commit.short_id,
             title: commit.title,

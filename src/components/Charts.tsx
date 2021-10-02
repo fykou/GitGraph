@@ -91,6 +91,8 @@ export class Charts extends React.Component<
       }
     )
 
+    console.warn(groupByDate)
+
     const contributorNames = this.state.contributors.map(
       (contributor: Contributor) => {
         return contributor.getName()
@@ -119,7 +121,6 @@ export class Charts extends React.Component<
 
   render() {
     const { contributors } = this.state
-    console.warn(this.getLineChartData())
     return (
       <div className="charts-container">
         <ResponsiveContainer width="90%" height={400}>

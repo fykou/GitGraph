@@ -4,7 +4,7 @@ import image from '../img/GitGraph.svg'
 export function Navbar() {
   return (
     <nav
-      className="bg-bestGray-dark flex justify-around items-center shadow-lg w-screen"
+      className="bg-bestGray-dark flex justify-around items-center shadow-lg md:flex-shrink"
       data-testid="nav"
     >
       <img className="h-10" src={image} />

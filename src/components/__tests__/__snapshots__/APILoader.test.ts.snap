@@ -4,9 +4,63 @@ exports[`APILoader test Test closed issues 1`] = `
 Array [
   Issue {
     "props": Object {
+      "assignees": undefined,
+      "description": null,
+      "id": 54221,
+      "state": "closed",
+      "title": "Fix footer",
+    },
+  },
+  Issue {
+    "props": Object {
       "assignees": Array [
         User {
           "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": null,
+      "id": 54220,
+      "state": "closed",
+      "title": "Fix infobox",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": undefined,
+      "description": "APIManager is run and rerenders the DOM 4 times on each refresh?
+Could this be due to to the way useEffect is used with the API functions and useState?",
+      "id": 54034,
+      "state": "closed",
+      "title": "API requesting multiple times",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": null,
+      "id": 53800,
+      "state": "closed",
+      "title": "FEAT: Create last 5 issues",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/da38006dcacf8156bce26d14186fe363?s=80&d=identicon",
             "id": 3157,
             "name": "Ole Alexander Høyby",
           },
@@ -23,6 +77,94 @@ Array [
       "assignees": Array [
         User {
           "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": "",
+      "id": 53734,
+      "state": "closed",
+      "title": "FEAT: Save axios requests in sessionstorage",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": null,
+      "id": 53731,
+      "state": "closed",
+      "title": "FEAT: % issues resolved",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/1138/avatar.png",
+            "id": 1138,
+            "name": "Patrick Øivind Helvik Legendre",
+          },
+        },
+      ],
+      "description": null,
+      "id": 53696,
+      "state": "closed",
+      "title": "FEAT: create infobox",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": "at it2810-XX.idi.ntnu.no
+
+Forelesning 3 om dette prosjektet sier vi skal sette opp websever?",
+      "id": 52783,
+      "state": "closed",
+      "title": "FEAT: Set up webserver",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/1138/avatar.png",
+            "id": 1138,
+            "name": "Patrick Øivind Helvik Legendre",
+          },
+        },
+      ],
+      "description": null,
+      "id": 52485,
+      "state": "closed",
+      "title": "FEAT: create charts",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/da38006dcacf8156bce26d14186fe363?s=80&d=identicon",
             "id": 3157,
             "name": "Ole Alexander Høyby",
           },
@@ -36,102 +178,6 @@ Array [
       "id": 52274,
       "state": "closed",
       "title": "FEAT: extend API",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "id": 2350,
-            "name": "Marius Arhaug",
-          },
-        },
-      ],
-      "description": "Create cards that hold data from API",
-      "id": 52266,
-      "state": "closed",
-      "title": "FEAT: create basic card component",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "id": 3157,
-            "name": "Ole Alexander Høyby",
-          },
-        },
-      ],
-      "description": "Use the react-meta-tags package to add meta tags",
-      "id": 51552,
-      "state": "closed",
-      "title": "FEAT: Add meta tags",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "id": 3157,
-            "name": "Ole Alexander Høyby",
-          },
-        },
-      ],
-      "description": "Task description explicitly states Node version 14.17.x",
-      "id": 51549,
-      "state": "closed",
-      "title": "CHANGE: Node to version 14.17.x",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "id": 2350,
-            "name": "Marius Arhaug",
-          },
-        },
-      ],
-      "description": "Add contributing to get members up to speed and for keeping things in check",
-      "id": 51475,
-      "state": "closed",
-      "title": "FEAT: add contributing md and update readme",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "id": 3197,
-            "name": "Stefan Djordje Tomic",
-          },
-        },
-      ],
-      "description": "Set up pipelines for gitlab yml with jest and squash and eslitn/prettier checks",
-      "id": 51340,
-      "state": "closed",
-      "title": "FEAT: Setup testing/jesting with pipeline",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "id": 2350,
-            "name": "Marius Arhaug",
-          },
-        },
-      ],
-      "description": "Add simple landingpage for application. Needs a navbar to navigate to other pages (to be created later)",
-      "id": 51335,
-      "state": "closed",
-      "title": "FEAT: add homepage for frontend app",
     },
   },
 ]

@@ -13,7 +13,6 @@ interface IIssueListState {
 interface IIssueListProps {
   loader: APILoader
   className?: string
-  showPrecentage?: boolean
 }
 export class IssueList extends ReactComponent<IIssueListProps, IIssueListState> {
 
@@ -60,27 +59,17 @@ export class IssueList extends ReactComponent<IIssueListProps, IIssueListState> 
 
   }
 
-  presentageIssuesCompleted() {
-    return this.state.issues.filter((issue) => issue.getState() === 'closed').length / this.state.issues.length
-  }
-
   render() {
     const { issues, errorMessage } = this.state
-    const { showPrecentage } = this.props
     return (
       <>
         <div className={`text-center-main ${this.getClassName()}`}>
-          <h1 className="text-center px-20 font-bold">Last 5 issues</h1>
+          <h1 className="text-center header px-20 font-bold">Last 5 issues</h1>
           {issues.slice(0, 5).map((issue: Issue) => (
-            <IssueCard issue={issue} />
+            <IssueCard issue={issue} key={issue.getId()} />
           ))}
           {errorMessage && <p className="error">{errorMessage}</p>}
         </div>
-        {showPrecentage &&
-          <div className={`text-center-main ${this.getClassName()}`}>
-            <p className="md:text-4xl">Issues completed: {this.presentageIssuesCompleted() * 100}%</p>
-          </div>
-        }
       </>
     )
   }

@@ -4,6 +4,23 @@ exports[`APILoader test Test closed issues 1`] = `
 Array [
   Issue {
     "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/1138/avatar.png",
+            "id": 1138,
+            "name": "Patrick Øivind Helvik Legendre",
+          },
+        },
+      ],
+      "description": null,
+      "id": 54461,
+      "state": "closed",
+      "title": "FEAT: Button Last 5 days",
+    },
+  },
+  Issue {
+    "props": Object {
       "assignees": undefined,
       "description": null,
       "id": 54221,
@@ -33,6 +50,23 @@ Array [
       "assignees": Array [
         User {
           "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": "Make API loader a single structure, make parent component, react class components with state and make individual components functional components without much extra features.",
+      "id": 54134,
+      "state": "closed",
+      "title": "CHANGE: refactor code base strucutre",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
             "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
             "id": 3197,
             "name": "Stefan Djordje Tomic",
@@ -43,6 +77,23 @@ Array [
       "id": 54126,
       "state": "closed",
       "title": "FEAT: WebStorage",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": null,
+      "id": 54125,
+      "state": "closed",
+      "title": "Write comments for documentation",
     },
   },
   Issue {

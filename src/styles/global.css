@@ -34,7 +34,8 @@ p {
 }
 
 .text-center-main {
-  @apply w-3/6 m-auto text-center;
+  @apply text-center;
+  width: 45%;
 }
 
 .infobox {
@@ -43,14 +44,19 @@ p {
   shadow-2xl text-center;
 }
 
+@media screen and (max-width: 770px) {
+  .infobox-flex-container {
+    flex-direction: column;
+  }
+  .infobox-flex-container div {
+    margin: auto;
+  }
+}
 input:checked ~ .dot {
   transform: translateX(100%);
   background-color: #ff3a3a;
 }
 
-@media screen and (max-width: 640px){
-  #infobox{
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
+.header {
+  @apply text-2xl;
 }

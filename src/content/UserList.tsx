@@ -116,7 +116,7 @@ export class UserList extends ReactComponent<IUserListProps, IUserListState> {
     return (
       <div className={`text-center-main ${this.getClassName()}`}>
         <h1 className="text-center header py-10 font-bold my-6">Top 3 contributors</h1>
-        {Array.from(this.getTopContributors(3)).map(([user, commits]: [User, number]) => (
+        {Array.from(this.getTopContributors(4)).map(([user, commits]: [User, number]) => (
           <UserCard user={user} key={user.getId()} commits={commits} />
         ))}
         {errorMessage && <p className="error">{errorMessage}</p>}

@@ -149,3 +149,7 @@ We've implemented some snapshot tests in order to make sure that data we're gath
 We designed the website with mobile design first in mind. In order to make our website mobile we applied tailwinds responsive styles that kept the relative distances between components even no matter what the size the user screen was. We also applied media queries to the **UserCard** and **IssueCard** to make them fit into a smaller page aswell as a bigger page. This was done by chaning the _flex-direction_ from _row_ to _column_ 
 
 Here are some images of the mobile view. 
+
+!['Chart'](documentation/Images/5.jpg)
+!['TopContibutors'](documentation/Images/3.jpg)
+!['Issues'](documentation/Images/1.jpg)

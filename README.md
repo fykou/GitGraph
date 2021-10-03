@@ -16,6 +16,7 @@
 [![pipeline status](https://gitlab.stud.idi.ntnu.no/it2810-h21/team-51/project-2/badges/master/pipeline.svg)](https://gitlab.stud.idi.ntnu.no/it2810-h21/team-51/project-2/-/commits/master)
 
 # Introduction
+
 GitGraph is a single page application that fetches and shows information about our repo. \
 This project was made as a project for teaching purposes in the class IT2810 - WebDesign at NTNU in 2021.
 
@@ -31,7 +32,7 @@ Visit App at: [localhost:3000](http://localhost:3000)
 
 # Documentation
 
-You can find the documenation for react [on their website](https://reactjs.org/docs/getting-started.html). 
+You can find the documenation for react [on their website](https://reactjs.org/docs/getting-started.html).
 
 The data used on our website is pulled from [the GitLab API](https://docs.gitlab.com/ee/api/api_resources.html) using [Axios](https://axios-http.com/docs/intro).
 

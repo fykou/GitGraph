@@ -15,6 +15,7 @@ interface IUserListProps {
   loader: APILoader
   className?: string
 }
+//class that retrieves users in the repository and displays it in the infobox.
 export class UserList extends ReactComponent<IUserListProps, IUserListState> {
 
   constructor(props: IUserListProps) {

@@ -14,6 +14,7 @@ interface IIssueListProps {
   loader: APILoader
   className?: string
 }
+//class that retrieves the last issues and displays it in the infobox
 export class IssueList extends ReactComponent<IIssueListProps, IIssueListState> {
 
   constructor(props: IIssueListProps) {

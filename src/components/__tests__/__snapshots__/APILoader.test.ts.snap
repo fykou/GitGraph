@@ -7,6 +7,23 @@ Array [
       "assignees": Array [
         User {
           "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": "Use Reat Context API, for example to interact with toggleButton",
+      "id": 54568,
+      "state": "closed",
+      "title": "Use React Context API",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
             "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
             "id": 2350,
             "name": "Marius Arhaug",
@@ -115,12 +132,63 @@ Array [
   },
   Issue {
     "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": "Testing website on 3 different devices computer, mobile, monitor. Document the testing afterwards.",
+      "id": 54124,
+      "state": "closed",
+      "title": "TEST: frontend and responsive design",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": null,
+      "id": 54123,
+      "state": "closed",
+      "title": "TEST: create a test for component behaviour",
+    },
+  },
+  Issue {
+    "props": Object {
       "assignees": undefined,
       "description": "APIManager is run and rerenders the DOM 4 times on each refresh?
 Could this be due to to the way useEffect is used with the API functions and useState?",
       "id": 54034,
       "state": "closed",
       "title": "API requesting multiple times",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/da38006dcacf8156bce26d14186fe363?s=80&d=identicon",
+            "id": 3157,
+            "name": "Ole Alexander Høyby",
+          },
+        },
+      ],
+      "description": null,
+      "id": 54026,
+      "state": "closed",
+      "title": "CHANGE: Revise documentation",
     },
   },
   Issue {

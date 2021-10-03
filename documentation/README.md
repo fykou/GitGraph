@@ -145,11 +145,11 @@ A test coverage badge has been added to the main README file aswell as the GitLa
 
 We've implemented some snapshot tests in order to make sure that data we're gathering from the API' matchs with expected data from the API. These sorts of tests are there to help us make sure that if we make alterations to the APILoader methods that we do not introduce some new wierd data type.
 
-## Responsive Design 
-We designed the website with mobile design first in mind. In order to make our website mobile we applied tailwinds responsive styles that kept the relative distances between components even no matter what the size the user screen was. We also applied media queries to the **UserCard** and **IssueCard** to make them fit into a smaller page aswell as a bigger page. This was done by chaning the _flex-direction_ from _row_ to _column_ 
+## Responsive Design
 
-Here are some images of the mobile view. 
+We designed the website with mobile design first in mind. In order to make our website mobile we applied tailwinds responsive styles that kept the relative distances between components even no matter what the size the user screen was. We also applied media queries to the **UserCard** and **IssueCard** to make them fit into a smaller page aswell as a bigger page. This was done by chaning the _flex-direction_ from _row_ to _column_
+
+Here are some images of the mobile view.
 
 !['Chart'](documentation/Images/5.jpg)
 !['TopContibutors'](documentation/Images/3.jpg)
-!['Issues'](documentation/Images/1.jpg)

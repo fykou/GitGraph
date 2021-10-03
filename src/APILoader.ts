@@ -170,4 +170,17 @@ export class APILoader {
       return `Status: ${error.response.status}`
     }
   }
+
+  public async getPrecentageIssuesCompleted(): Promise<number | undefined> {
+    const issues = await this.getIssues()
+
+    if (!issues || typeof issues === 'string') {
+      return undefined
+    }
+
+    return (
+      issues.filter((issue) => issue.getState() === 'closed').length /
+      issues.length
+    )
+  }
 }

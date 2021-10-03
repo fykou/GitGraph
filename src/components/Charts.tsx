@@ -67,12 +67,12 @@ export class Charts extends React.Component<
   }
 
   public getCommitFromLastDays(days: number) {
-    const SECONDS_IN_DAY = 24 * 60 * 60 * 1000
+    const MS_IN_DAY = 24 * 60 * 60 * 1000
 
     const groupByDate: Record<string, Commit[]> = _.groupBy(
       this.state.commits,
       (commit: Commit) => {
-        if (Date.now() - stringToUnixDate(commit.getCreatedAt()).getTime() <= days * SECONDS_IN_DAY) {
+        if (Date.now() - stringToUnixDate(commit.getCreatedAt()).getTime() <= days * MS_IN_DAY) {
           return commit.getCreatedAtDays()
         }
       }
@@ -131,8 +131,9 @@ export class Charts extends React.Component<
       }
     )
 
-    return Object.entries(groupByDate).map(
+    return Object.entries(groupByDate).filter(([date, _commits]: [string, Commit[]]) => date !== "undefined").map(
       ([date, commits]: [string, Commit[]]) => {
+
         const lineChartValue: Record<string, number | string> = {
           "date": date
         }
@@ -160,6 +161,7 @@ export class Charts extends React.Component<
           stroke={getRandomColor()}
           activeDot={{ r: 8 }}
           dataKey={contributor.getName()}
+          key={contributor.getEmail()}
         />
       ))
     )
@@ -168,7 +170,6 @@ export class Charts extends React.Component<
   render() {
     return (
       <div>
-        <ToggleButton text='Toggle last 5 days' buttonId='chartToggle' setFunc={(bool) => this.setLast5(bool)} />
         <div className="charts-container">
           <div hidden={!this.state.last5}>
             <ResponsiveContainer width="90%" height={400}>
@@ -183,7 +184,7 @@ export class Charts extends React.Component<
 
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis xAxisId="0" hide={true} dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
+                <XAxis xAxisId="0" dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
                 <YAxis label={{ value: 'Number of commits', angle: -90, position: 'insideLeft', fill: 'white' }} />
                 <Legend />
                 <Tooltip />
@@ -204,7 +205,7 @@ export class Charts extends React.Component<
 
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis xAxisId="0" hide={true} dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
+                <XAxis xAxisId="0" dataKey="date" />
                 <YAxis label={{ value: 'Number of commits', angle: -90, position: 'insideLeft', fill: 'white' }} />
                 <Legend />
                 <Tooltip />
@@ -213,6 +214,7 @@ export class Charts extends React.Component<
             </ResponsiveContainer>
           </div>
         </div>
+        <ToggleButton className="mt-4 ml-4" text='Toggle last 5 days' buttonId='chartToggle' setFunc={(bool) => this.setLast5(bool)} />
       </div>
     )
   }

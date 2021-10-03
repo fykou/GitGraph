@@ -1,11 +1,12 @@
 import React from "react";
 import { APILoader } from '../APILoader'
 import { UserCard } from "../components";
-import { User } from '../models'
+import { User, Contributor } from '../models'
 import { ReactComponent } from "./ReactComponent";
 
 interface IUserListState {
   users: User[]
+  contributors: Contributor[]
   loader: APILoader
   errorMessage: string
 }
@@ -20,6 +21,7 @@ export class UserList extends ReactComponent<IUserListProps, IUserListState> {
     super(props)
     this.state = {
       users: [],
+      contributors: [],
       loader: props.loader,
       errorMessage: ''
     }
@@ -30,13 +32,30 @@ export class UserList extends ReactComponent<IUserListProps, IUserListState> {
       users
     })
   }
+
+  setContributors(contributors: Contributor[]) {
+    this.setState({
+      contributors
+    })
+  }
+
   setError(errorMessage: string) {
     this.setState({
       errorMessage
     })
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    void this.loadUsers()
+    void this.loadContributors()
+    this.getTopContributors(3)
+  }
+
+  componentDidUpdate() {
+    this.getTopContributors(3)
+  }
+
+  async loadUsers() {
     const response = await this.state.loader.getUsers()
 
     if (!response) {
@@ -48,18 +67,57 @@ export class UserList extends ReactComponent<IUserListProps, IUserListState> {
     }
 
     else {
-      this.setUsers(response.slice(0, 4))
+      this.setUsers(response)
+    }
+  }
+
+  async loadContributors() {
+    const response = await this.state.loader.geContributors()
+
+    if (!response) {
+      return;
     }
 
+    if (typeof response === "string") {
+      this.setError(response)
+    }
+
+    else {
+      this.setContributors(response)
+    }
+  }
+
+  public getTopContributors(n: number): User[] {
+    const topNContributors = [...this.state.contributors]
+      .filter(c => this.state.users.map(u => u.getName()).includes(c.getName())).
+      sort((a, b) => {
+        return b.getCommitNumber() - a.getCommitNumber()
+      })
+      .slice(0, n)
+
+    console.warn(topNContributors)
+    console.warn(this.state.users)
+    const topNUsers: User[] = []
+
+    topNContributors.forEach(contributor => {
+      this.state.users.forEach(user => {
+        if (user.getName() === contributor.getName()) {
+          console.warn(user)
+          topNUsers.push(user)
+        }
+      })
+    })
+
+    return topNUsers
   }
 
   render() {
-    const { users, errorMessage } = this.state
+    const { errorMessage } = this.state
     return (
-      <div className={`w-3/6 m-auto text-center flex justify-between flex-wrap ${this.getClassName()}`}>
-        <h1 className=" font-bold md:px-40">Top contributors</h1>
-        {users.map((user: User) => (
-          <UserCard user={user} />
+      <div className={`text-center-main ${this.getClassName()}`}>
+        <h1 className="text-center header px-20 font-bold">Top 3 contributors</h1>
+        {this.getTopContributors(3).map((user: User) => (
+          <UserCard user={user} key={user.getId()} />
         ))}
         {errorMessage && <p className="error">{errorMessage}</p>}
       </div>)

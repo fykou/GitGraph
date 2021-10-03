@@ -1,0 +1,5 @@
+.card {
+  @apply border rounded-md border-gray-500 bg-bestGray-dark;
+  @apply w-full my-4 p-4 px-8 text-center;
+  min-height: 8.5rem;
+}

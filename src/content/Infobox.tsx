@@ -1,22 +1,42 @@
 import React from 'react'
 import { APILoader } from '../APILoader'
 import { IssueList, UserList } from '.'
+import { ShowPrecentage } from '../components/ShowPrecentage'
+import { ReactComponent } from './ReactComponent'
 
 interface IInfoBoxState {
   loader: APILoader
+  precentage: number
 }
-export class InfoBox extends React.Component<{ loader: APILoader }, IInfoBoxState> {
+
+interface IInfoxBoxProps {
+  loader: APILoader
+  className?: string
+}
+export class InfoBox extends ReactComponent<IInfoxBoxProps, IInfoBoxState> {
 
   state: IInfoBoxState = {
-    loader: this.props.loader
+    loader: this.props.loader,
+    precentage: 0,
+  }
+
+  async componentDidMount() {
+    const precentage = await this.state.loader.getPrecentageIssuesCompleted()
+
+    this.setState({
+      precentage: precentage ? parseFloat(precentage.toFixed(2)) : 0
+    })
   }
 
   render() {
-    const { loader } = this.state
+    const { loader, precentage } = this.state
     return (
-      <div id="infobox" className=" flex justify-between flex-shrink bg-dark p-4">
-        <UserList loader={loader} />
-        <IssueList loader={loader} showPrecentage={true} />
+      <div className="flex flex-wrap">
+        <ShowPrecentage precentage={precentage} className="m-auto my-8" />
+        <div className="infobox-flex-container flex flex-row flex-wrap justify-between">
+          <UserList loader={loader} />
+          <IssueList loader={loader} />
+        </div>
       </div>
     )
   }

@@ -4,6 +4,7 @@ interface IToggleButtonProps {
   buttonId: string
   setFunc: (toggled: boolean) => void
   text?: string
+  className?: string
 }
 
 export function ToggleButton(props: IToggleButtonProps) {
@@ -48,7 +49,7 @@ export function ToggleButton(props: IToggleButtonProps) {
 
   return (
     <div data-testid="testToggle">
-      <div className="flex items-center justify-center w-full mb-12">
+      <div className={`flex items-center justify-start w-full mb-12 ${props.className ? props.className : ""}`}>
         <label htmlFor="toggleB" className="flex items-center cursor-pointer">
           <div className="relative">
             <input
@@ -67,7 +68,7 @@ export function ToggleButton(props: IToggleButtonProps) {
               className="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"
             ></div>
           </div>
-          <div className="ml-3 text-gray-700 font-medium dark:text-gray-100">
+          <div className="ml-3 text-gray-100 font-medium">
             {props.text ? props.text : ''}
           </div>
         </label>

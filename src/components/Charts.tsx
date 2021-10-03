@@ -13,12 +13,16 @@ import _ from 'lodash'
 import { APILoader } from '../APILoader'
 import { Commit, Contributor } from '../models'
 import { getRandomColor } from '../utils/getRandomColor'
+import { ToggleButton } from './ToggleButton'
+import { stringToUnixDate } from '../utils/stringToUnixDate'
 
 interface IChartsState {
+  [key: string]: unknown
   loader: APILoader
   errorMessage: string
   commits: Commit[]
   contributors: Contributor[]
+  last5: boolean
 }
 export class Charts extends React.Component<
   { loader: APILoader },
@@ -31,6 +35,7 @@ export class Charts extends React.Component<
       contributors: [],
       loader: props.loader,
       errorMessage: '',
+      last5: false
     }
   }
 
@@ -55,7 +60,28 @@ export class Charts extends React.Component<
     this.getLineChartData()
   }
 
-  async getCommits(): Promise<void> {
+  setLast5(bool: boolean) {
+    this.setState({
+      last5: bool
+    })
+  }
+
+  public getCommitFromLastDays(days: number) {
+    const SECONDS_IN_DAY = 24 * 60 * 60 * 1000
+
+    const groupByDate: Record<string, Commit[]> = _.groupBy(
+      this.state.commits,
+      (commit: Commit) => {
+        if (Date.now() - stringToUnixDate(commit.getCreatedAt()).getTime() <= days * SECONDS_IN_DAY) {
+          return commit.getCreatedAtDays()
+        }
+      }
+    )
+    return this.getCommitsPerDate(groupByDate);
+  }
+
+
+  private async getCommits(): Promise<void> {
     const response = await this.state.loader.getCommits()
 
     if (!response) {
@@ -83,16 +109,22 @@ export class Charts extends React.Component<
     }
   }
 
-  getLineChartData() {
+  public getLineChartData() {
     const groupByDate: Record<string, Commit[]> = _.groupBy(
       this.state.commits,
       (commit: Commit) => {
         return commit.getCreatedAtDays()
       }
     )
+    return this.getCommitsPerDate(groupByDate)
+  }
 
-    console.warn(groupByDate)
-
+  /**
+   * Create list of objects with names and values, in the specific format for Recharts
+   * @param groupByDate Object with dates and list of commits grouped to each date value
+   * @returns A of objects specified to Recharts desired structure. 
+   */
+  private getCommitsPerDate(groupByDate: Record<string, Commit[]>): Record<string, string | number>[] {
     const contributorNames = this.state.contributors.map(
       (contributor: Contributor) => {
         return contributor.getName()
@@ -119,38 +151,69 @@ export class Charts extends React.Component<
     )
   }
 
-  render() {
+  private createLines() {
     const { contributors } = this.state
     return (
-      <div className="charts-container">
-        <ResponsiveContainer width="90%" height={400}>
-          <LineChart
-            data={this.getLineChartData().reverse()}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
+      contributors.map((contributor: Contributor) => (
+        <Line
+          type="monotone"
+          stroke={getRandomColor()}
+          activeDot={{ r: 8 }}
+          dataKey={contributor.getName()}
+        />
+      ))
+    )
+  }
 
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
-            <YAxis label={{ value: 'Number of commits', angle: -90, position: 'insideLeft', fill: 'white' }} />
-            <Legend />
-            <Tooltip />
-            {contributors.map((contributor: Contributor) => (
-              <Line
-                type="monotone"
-                stroke={getRandomColor()}
-                activeDot={{ r: 8 }}
-                dataKey={contributor.getName()}
-              />
-            ))}
-          </LineChart>
-        </ResponsiveContainer>
+  render() {
+    return (
+      <div>
+        <ToggleButton text='Toggle last 5 days' buttonId='chartToggle' setFunc={(bool) => this.setLast5(bool)} />
+        <div className="charts-container">
+          <div hidden={!this.state.last5}>
+            <ResponsiveContainer width="90%" height={400}>
+              <LineChart
+                data={this.getCommitFromLastDays(5).reverse()}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis xAxisId="0" hide={true} dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
+                <YAxis label={{ value: 'Number of commits', angle: -90, position: 'insideLeft', fill: 'white' }} />
+                <Legend />
+                <Tooltip />
+                {this.createLines()}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          <div hidden={this.state.last5}>
+            <ResponsiveContainer width="90%" height={400}>
+              <LineChart
+                data={this.getLineChartData().reverse()}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis xAxisId="0" hide={true} dataKey="date" label={{ value: 'Date', position: 'bottom' }} />
+                <YAxis label={{ value: 'Number of commits', angle: -90, position: 'insideLeft', fill: 'white' }} />
+                <Legend />
+                <Tooltip />
+                {this.createLines()}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </div>
     )
-
   }
 }

@@ -31,6 +31,11 @@ export class IssueList extends ReactComponent<IIssueListProps, IIssueListState> 
       issues
     })
   }
+
+  getIssues(): Issue[] {
+    return this.state.issues
+  }
+
   setError(errorMessage: string) {
     this.setState({
       errorMessage
@@ -39,6 +44,7 @@ export class IssueList extends ReactComponent<IIssueListProps, IIssueListState> 
 
   async componentDidMount() {
     const response = await this.state.loader.getIssues()
+
 
     if (!response) {
       return;

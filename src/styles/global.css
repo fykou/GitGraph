@@ -43,6 +43,10 @@ p {
   shadow-2xl text-center;
 }
 
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #ff3a3a;
+}
 
 @media screen and (max-width: 640px){
   #infobox{

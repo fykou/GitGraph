@@ -30,6 +30,23 @@ Array [
   },
   Issue {
     "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": null,
+      "id": 54126,
+      "state": "closed",
+      "title": "FEAT: WebStorage",
+    },
+  },
+  Issue {
+    "props": Object {
       "assignees": undefined,
       "description": "APIManager is run and rerenders the DOM 4 times on each refresh?
 Could this be due to to the way useEffect is used with the API functions and useState?",
@@ -121,6 +138,24 @@ Could this be due to to the way useEffect is used with the API functions and use
       "id": 53696,
       "state": "closed",
       "title": "FEAT: create infobox",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
+            "avatarUrl": "https://secure.gravatar.com/avatar/e5e39c38cd6b4b353a152b804f90566b?s=80&d=identicon",
+            "id": 3197,
+            "name": "Stefan Djordje Tomic",
+          },
+        },
+      ],
+      "description": "* [x] Write snapshot-tests
+* [ ] Write API tests using Axios",
+      "id": 52904,
+      "state": "closed",
+      "title": "FEAT: Expand testing",
     },
   },
   Issue {

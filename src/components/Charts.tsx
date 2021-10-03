@@ -65,7 +65,11 @@ export class Charts extends React.Component<
       last5: bool
     })
   }
-
+  /**
+   * Function that retrieves the amount of commits per person during the last 5 days from today
+   * @param days this value is 5 but can be changed to show the last 10 days for example
+   * @returns the amount of commits per date
+   */
   public getCommitFromLastDays(days: number) {
     const MS_IN_DAY = 24 * 60 * 60 * 1000
 

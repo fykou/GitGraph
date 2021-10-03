@@ -1,5 +1,5 @@
 import React from "react";
-import { APILoader } from '../APILoader'
+import { APILoader } from '../data-loaders'
 import { UserCard } from "../components";
 import { User, Contributor } from '../models'
 import { ReactComponent } from "./ReactComponent";

@@ -10,7 +10,7 @@ import {
   Tooltip
 } from 'recharts'
 import _ from 'lodash'
-import { APILoader } from '../APILoader'
+import { APILoader } from '../data-loaders'
 import { Commit, Contributor } from '../models'
 import { getRandomColor } from '../utils/getRandomColor'
 import { ToggleButton } from './ToggleButton'

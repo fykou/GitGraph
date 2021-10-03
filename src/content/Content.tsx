@@ -1,4 +1,4 @@
-import { APILoader } from "../APILoader"
+import { APILoader } from "../data-loaders"
 import React from "react"
 import { InfoBox } from "./Infobox"
 import { Charts } from '../components'
@@ -6,7 +6,7 @@ import { Charts } from '../components'
 interface IContentState {
   loader: APILoader
 }
-export default class Content extends React.Component<Record<string, unknown>, IContentState> {
+export class Content extends React.Component<Record<string, unknown>, IContentState> {
 
   state: IContentState = {
     loader: new APILoader()
@@ -16,7 +16,7 @@ export default class Content extends React.Component<Record<string, unknown>, IC
     const { loader } = this.state;
     return (
       <>
-        <Charts loader={loader}/>
+        <Charts loader={loader} />
         <InfoBox loader={loader} />
       </>
     )

@@ -1,4 +1,4 @@
-import { APILoader } from '../../APILoader'
+import { APILoader } from '../../data-loaders'
 
 const loader = new APILoader()
 const TIMEOUT = 10000

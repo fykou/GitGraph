@@ -1,7 +1,6 @@
 import React from "react";
 import { Issue } from "../models"
 
-
 export function IssueCard({ issue }: { issue: Issue }) {
 
   return (
@@ -10,5 +9,4 @@ export function IssueCard({ issue }: { issue: Issue }) {
       <p className="mt-1 mb-8">{issue.getDescription()}</p>
     </div>
   )
-
 }

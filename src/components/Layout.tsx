@@ -1,12 +1,9 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-import '../styles/global.css'
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function Layout({ children }: { children: any }) {
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <div>
       <Navbar />

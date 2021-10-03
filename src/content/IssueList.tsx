@@ -1,5 +1,5 @@
 import React from "react";
-import { APILoader } from '../APILoader'
+import { APILoader } from '../data-loaders'
 import { IssueCard } from "../components/IssueCard";
 import { Issue } from "../models";
 import { ReactComponent } from "./ReactComponent";

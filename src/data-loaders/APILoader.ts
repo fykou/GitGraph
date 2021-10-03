@@ -3,11 +3,11 @@ import {
   IGitLabUser,
   IGitLabCommit,
   IGitLabContributor,
-} from './content/types'
-import axios from './http-common'
+} from '../content/types'
+import axios from '../http-common'
 import { AxiosError, AxiosResponse } from 'axios'
-import { User, Issue, Commit, Contributor } from './models'
-import { arrayOrUndefined } from './utils/arrayOrUndefined'
+import { User, Issue, Commit, Contributor } from '../models'
+import { arrayOrUndefined } from '../utils/arrayOrUndefined'
 import { WebStorageCache } from './WebStorageCache'
 
 export class APILoader {

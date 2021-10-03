@@ -1,6 +1,7 @@
 import React from 'react'
-import { APILoader } from '../APILoader'
-import { IssueList, UserList } from '.'
+import { APILoader } from '../data-loaders/APILoader'
+import { IssueList } from './IssueList'
+import { UserList } from './UserList'
 import { ShowPrecentage } from '../components/ShowPrecentage'
 import { ReactComponent } from './ReactComponent'
 

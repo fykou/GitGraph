@@ -31,9 +31,9 @@ export class InfoBox extends ReactComponent<IInfoxBoxProps, IInfoBoxState> {
   render() {
     const { loader, precentage } = this.state
     return (
-      <div className="flex flex-wrap">
+      <div className="flex flex-col">
         <ShowPrecentage precentage={precentage} className="m-auto my-8" />
-        <div className="infobox-flex-container flex flex-row flex-wrap justify-between">
+        <div className="infobox-flex-container flex flex-row justify-between">
           <UserList loader={loader} />
           <IssueList loader={loader} />
         </div>

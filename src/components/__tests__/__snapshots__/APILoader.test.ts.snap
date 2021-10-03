@@ -7,6 +7,23 @@ Array [
       "assignees": Array [
         User {
           "props": Object {
+            "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/2350/avatar.png",
+            "id": 2350,
+            "name": "Marius Arhaug",
+          },
+        },
+      ],
+      "description": "right now info box is fugyl, fix it",
+      "id": 54552,
+      "state": "closed",
+      "title": "Refactor info box",
+    },
+  },
+  Issue {
+    "props": Object {
+      "assignees": Array [
+        User {
+          "props": Object {
             "avatarUrl": "https://gitlab.stud.idi.ntnu.no/uploads/-/system/user/avatar/1138/avatar.png",
             "id": 1138,
             "name": "Patrick Øivind Helvik Legendre",
@@ -243,27 +260,6 @@ Forelesning 3 om dette prosjektet sier vi skal sette opp websever?",
       "id": 52485,
       "state": "closed",
       "title": "FEAT: create charts",
-    },
-  },
-  Issue {
-    "props": Object {
-      "assignees": Array [
-        User {
-          "props": Object {
-            "avatarUrl": "https://secure.gravatar.com/avatar/da38006dcacf8156bce26d14186fe363?s=80&d=identicon",
-            "id": 3157,
-            "name": "Ole Alexander Høyby",
-          },
-        },
-      ],
-      "description": "Add api for additional content:
-- Repo name
-- Repo description
-- Commits: individual and global
-- view readme",
-      "id": 52274,
-      "state": "closed",
-      "title": "FEAT: extend API",
     },
   },
 ]

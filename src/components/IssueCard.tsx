@@ -5,7 +5,7 @@ export function IssueCard({ issue }: { issue: Issue }) {
 
   return (
     <div className="card">
-      <h3>{issue.getTitle()}</h3>
+      <h3 className="text-xl font-bold">{issue.getTitle()}</h3>
       <p className="mt-1 mb-8">{issue.getDescription()}</p>
     </div>
   )

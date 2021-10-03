@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -40,7 +45,6 @@ p {
 
 .infobox {
   @apply text-white
-  /* grid grid-cols-3 gap-4 p-8 */
   shadow-2xl text-center;
 }
 
@@ -50,6 +54,11 @@ p {
   }
   .infobox-flex-container div {
     margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .header {
+    @apply text-lg;
   }
 }
 input:checked ~ .dot {

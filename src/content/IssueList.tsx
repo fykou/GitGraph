@@ -64,7 +64,7 @@ export class IssueList extends ReactComponent<IIssueListProps, IIssueListState> 
     return (
       <>
         <div className={`text-center-main ${this.getClassName()}`}>
-          <h1 className="text-center header px-20 font-bold">Last 5 issues</h1>
+          <h1 className="text-center header py-10 font-bold my-6">Last 5 issues</h1>
           {issues.slice(0, 5).map((issue: Issue) => (
             <IssueCard issue={issue} key={issue.getId()} />
           ))}

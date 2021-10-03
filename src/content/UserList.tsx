@@ -87,7 +87,7 @@ export class UserList extends ReactComponent<IUserListProps, IUserListState> {
     }
   }
 
-  public getTopContributors(n: number): User[] {
+  public getTopContributors(n: number): Map<User, number> {
     const topNContributors = [...this.state.contributors]
       .filter(c => this.state.users.map(u => u.getName()).includes(c.getName())).
       sort((a, b) => {
@@ -97,27 +97,26 @@ export class UserList extends ReactComponent<IUserListProps, IUserListState> {
 
     console.warn(topNContributors)
     console.warn(this.state.users)
-    const topNUsers: User[] = []
+    const topNUsersAndCommits = new Map<User, number>();
 
     topNContributors.forEach(contributor => {
       this.state.users.forEach(user => {
         if (user.getName() === contributor.getName()) {
-          console.warn(user)
-          topNUsers.push(user)
+          topNUsersAndCommits.set(user, contributor.getCommitNumber())
         }
       })
     })
 
-    return topNUsers
+    return topNUsersAndCommits
   }
 
   render() {
     const { errorMessage } = this.state
     return (
       <div className={`text-center-main ${this.getClassName()}`}>
-        <h1 className="text-center header px-20 font-bold">Top 3 contributors</h1>
-        {this.getTopContributors(3).map((user: User) => (
-          <UserCard user={user} key={user.getId()} />
+        <h1 className="text-center header py-10 font-bold my-6">Top 3 contributors</h1>
+        {Array.from(this.getTopContributors(3)).map(([user, commits]: [User, number]) => (
+          <UserCard user={user} key={user.getId()} commits={commits} />
         ))}
         {errorMessage && <p className="error">{errorMessage}</p>}
       </div>)

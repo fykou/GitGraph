@@ -151,5 +151,5 @@ We designed the website with mobile design first in mind. In order to make our w
 
 Here are some images of the mobile view.
 
-!['Chart'](documentation/Images/5.jpg)
-!['TopContibutors'](documentation/Images/3.jpg)
+!['Chart'](/5.jpg)
+!['TopContibutors'](/3.jpg)
